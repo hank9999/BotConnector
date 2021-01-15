@@ -1,0 +1,30 @@
+package com.github.hank9999.botconnector.Events;
+
+import com.github.hank9999.botconnector.Libs.Json;
+import com.github.hank9999.botconnector.Utils.WebSocket;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerQuitEvent;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class PlayerLogoutEvent implements Listener {
+    @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
+    public void onLogout(PlayerQuitEvent event) {
+        Player p = event.getPlayer();
+        Map<String, String> map = new LinkedHashMap<String, String>() {
+            {
+                put("type", "Logout");
+                put("username", ChatColor.stripColor(p.getName().trim()));
+                put("uuid", String.valueOf(p.getUniqueId()));
+            }
+        };
+        map = Collections.unmodifiableMap(map);
+        WebSocket.sendMessage(Json.Serialization(map));
+    }
+}

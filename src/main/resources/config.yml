@@ -1,0 +1,8 @@
+url: 'ws://example.com'
+name: 'server'
+token: 'ffffffff-ffff-ffff-ffff-ffffffffffff'
+ChatEvent: false
+PlayerLoginEvent: false
+PlayerLogoutEvent: false
+PlayerCommandEvent: false
+RconCommandEvent: false

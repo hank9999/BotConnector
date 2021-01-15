@@ -1,7 +1,7 @@
 name: BotConnector
 version: ${project.version}
 main: com.github.hank9999.botconnector.BotConnector
-api-version: 1.15
+api-version: 1.13
 authors: [ hank9999 ]
 description: Connect your server with the bot program via WebSocket
 website: https://github.com/hank9999/BotConnector
