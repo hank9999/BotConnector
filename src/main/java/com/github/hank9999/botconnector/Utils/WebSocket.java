@@ -8,10 +8,13 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.java_websocket.enums.ReadyState;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WebSocket {
     public static Boolean Connected = false;
     public static WsClient myClient;
+    public static List<String> queue = new ArrayList<>();
 
     public static void Init(String url, String token, String name) {
         try {
@@ -33,12 +36,16 @@ public class WebSocket {
                         e.printStackTrace();
                     }
                 }
-            }).runTaskLaterAsynchronously(BotConnector.plugin, 200L);
+            }).runTaskLaterAsynchronously(BotConnector.plugin, 8 * 20L);
         }
     }
 
     public static void sendMessage(String text) {
-        myClient.send(text);
+        if (!Connected) {
+            queue.add(text);
+        } else {
+            myClient.send(text);
+        }
     }
 
     public static void Close() {

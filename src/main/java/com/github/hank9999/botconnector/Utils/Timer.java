@@ -1,0 +1,39 @@
+package com.github.hank9999.botconnector.Utils;
+
+import com.github.hank9999.botconnector.BotConnector;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+
+import java.util.Iterator;
+import java.util.TimerTask;
+
+public class Timer {
+    private Plugin plugin;
+
+    public void queue() {
+        this.plugin = BotConnector.plugin;
+        final java.util.Timer timer = new java.util.Timer(true); // We use a timer cause the Bukkit scheduler is affected by server lags
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (!plugin.isEnabled()) { // Plugin was disabled
+                    timer.cancel();
+                    return;
+                }
+                Bukkit.getScheduler().runTask(plugin, () -> checkQueue());
+            }
+        }, 0, 1000 * 5);
+    }
+
+    private void checkQueue() {
+        if (WebSocket.queue.size() != 0 && WebSocket.Connected) {
+            Iterator<String> iterator = WebSocket.queue.iterator();
+            while (iterator.hasNext()){
+                if (WebSocket.Connected) {
+                    WebSocket.sendMessage(iterator.next());
+                    iterator.remove();
+                }
+            }
+        }
+    }
+}

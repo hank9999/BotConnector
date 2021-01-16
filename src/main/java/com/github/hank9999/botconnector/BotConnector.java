@@ -2,6 +2,7 @@ package com.github.hank9999.botconnector;
 
 import com.github.hank9999.botconnector.Events.*;
 import com.github.hank9999.botconnector.Libs.Config;
+import com.github.hank9999.botconnector.Utils.Timer;
 import com.github.hank9999.botconnector.Utils.WebSocket;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -36,6 +37,7 @@ public final class BotConnector extends JavaPlugin {
             getServer().getPluginManager().registerEvents(new RconCommandEvent(), this);
             getLogger().info(ChatColor.AQUA + "RconCommandEvent registered");
         }
+        new Timer().queue();
     }
 
     @Override
