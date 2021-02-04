@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Events;
+package com.github.hank9999.botconnector.Events.bukkit;
 
 import com.github.hank9999.botconnector.Libs.Json;
 import com.github.hank9999.botconnector.Utils.WebSocket;
@@ -7,19 +7,21 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.server.RemoteServerCommandEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class RconCommandEvent implements Listener {
+public class PlayerLogoutEvent implements Listener {
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
-    public void onCommand(RemoteServerCommandEvent event) {
+    public void onLogout(PlayerQuitEvent event) {
+        Player p = event.getPlayer();
         Map<String, String> map = new LinkedHashMap<String, String>() {
             {
-                put("type", "RconCommand");
-                put("command", event.getCommand());
+                put("type", "Logout");
+                put("username", ChatColor.stripColor(p.getName().trim()));
+                put("uuid", String.valueOf(p.getUniqueId()));
             }
         };
         map = Collections.unmodifiableMap(map);

@@ -9,7 +9,13 @@ public class Config {
     public static String url = "ws://example.com";
     public static String name = "server";
     public static String token = "ffffffff-ffff-ffff-ffff-ffffffffffff";
-    public static Boolean ConsoleLogForward = false;
+    public static class ConsoleLogForward {
+        public static Boolean enable = false;
+        public static class filter {
+            public static Boolean enable = false;
+            public static List<String> list;
+        }
+    }
     public static Boolean ChatEvent = false;
     public static Boolean PlayerLoginEvent = false;
     public static Boolean PlayerLogoutEvent = false;
@@ -63,7 +69,9 @@ public class Config {
         url = getString("url");
         name = getString("name");
         token = getString("token");
-        ConsoleLogForward = getBoolean("ConsoleLogForward");
+        ConsoleLogForward.enable = getBoolean("ConsoleLogForward.enable");
+        ConsoleLogForward.filter.enable = getBoolean("ConsoleLogForward.filter.enable");
+        ConsoleLogForward.filter.list = getStringList("ConsoleLogForward.filter.list");
         ChatEvent = getBoolean("ChatEvent");
         PlayerLoginEvent = getBoolean("PlayerLoginEvent");
         PlayerLogoutEvent = getBoolean("PlayerLogoutEvent");

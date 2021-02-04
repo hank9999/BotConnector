@@ -1,6 +1,13 @@
 url: 'ws://example.com'
 name: 'server'
 token: 'ffffffff-ffff-ffff-ffff-ffffffffffff'
+ConsoleLogForward:
+  enable: false
+  filter:
+    enable: true
+    list:
+      - 'WebSocketWrite'
+      - 'WebSocketRead'
 ChatEvent: false
 PlayerLoginEvent: false
 PlayerLogoutEvent: false
