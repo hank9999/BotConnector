@@ -96,8 +96,8 @@ All data will transfer in json format
 | `version` | Server's version 服务器版本 <br> String |  
 | `onlinePlayer` | Server's online player's username 服务器在线玩家用户名 <br> List\<String\> |  
 #### Remote Command Return 远程执行指令返回
-** Vanilla command can not get results at present, Only return `success` or `failure` **
-** 原版指令目前还不能获得返回, 只能返回 `success` 或者 `failure` **
+**Vanilla command can not get results at present, Only return `success` or `failure`**  
+**原版指令目前还不能获得返回, 只能返回 `success` 或者 `failure`**  
 | key | value |  
 | :-: | :-: |  
 | `type` | `command` |  
