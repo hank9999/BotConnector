@@ -37,6 +37,13 @@ public final class BotConnector extends JavaPlugin {
             getServer().getPluginManager().registerEvents(new RconCommandEvent(), this);
             getLogger().info(ChatColor.AQUA + "RconCommandEvent registered");
         }
+
+        try {
+            MetricsLite metrics = new MetricsLite(this, 10224);
+            getLogger().info(ChatColor.AQUA + "bStats Metrics Enable");
+        } catch (Exception exception) {
+            getLogger().warning("An error occurred while enabling bStats Metrics!");
+        }
         new Timer().queue();
     }
 
