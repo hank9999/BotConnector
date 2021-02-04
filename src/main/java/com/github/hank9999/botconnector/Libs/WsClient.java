@@ -1,5 +1,6 @@
 package com.github.hank9999.botconnector.Libs;
 
+import com.github.hank9999.botconnector.Events.WebSocketRecevicedMessage;
 import com.github.hank9999.botconnector.Utils.WebSocket;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -37,6 +38,6 @@ public class WsClient extends WebSocketClient {
 
     @Override
     public void onMessage(String message) {
-        System.out.println("WebSocket received: " + message);
+        new WebSocketRecevicedMessage().handler(message);
     }
 }
