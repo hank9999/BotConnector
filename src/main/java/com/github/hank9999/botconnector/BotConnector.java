@@ -4,6 +4,7 @@ import com.github.hank9999.botconnector.Events.*;
 import com.github.hank9999.botconnector.Libs.Config;
 import com.github.hank9999.botconnector.Utils.Timer;
 import com.github.hank9999.botconnector.Utils.WebSocket;
+import com.github.hank9999.botconnector.bStats.MetricsLite;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
