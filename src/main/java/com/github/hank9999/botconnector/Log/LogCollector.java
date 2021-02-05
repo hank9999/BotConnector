@@ -8,14 +8,15 @@ public class LogCollector {
 
     public static void send(int hour, int minute, int second, String ThreadName, String Level, String Message) {
         Message = ChatColor.stripColor(Message);
+        String str = "[" + hour + ":" + minute + ":" + second + "] " + "[" + ThreadName + "/" + Level + "]: " + Message;
         if (Config.ConsoleLogForward.filter.enable) {
+            String str_lowCase = str.toLowerCase();
             for (String text : Config.ConsoleLogForward.filter.list) {
-                if (Message.toLowerCase().contains(text.toLowerCase())) {
+                if (str_lowCase.contains(text.toLowerCase())) {
                     return;
                 }
             }
         }
-        String str = "[" + hour + ":" + minute + ":" + second + "] " + "[" + ThreadName + "/" + Level + "]: " + Message;
         ConsoleLogForward.send(str);
     }
 }
