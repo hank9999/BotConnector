@@ -27,6 +27,7 @@ public final class BotConnector extends JavaPlugin {
 
         if (Config.ConsoleLogForward.enable) {
             LogSetout.append();
+            new Timer().ConsoleLog();
             getLogger().info(ChatColor.AQUA + "ConsoleLogForward registered");
         }
 

@@ -4,9 +4,12 @@ import com.github.hank9999.botconnector.Events.bukkit.ConsoleLogForward;
 import com.github.hank9999.botconnector.Libs.Config;
 import org.bukkit.ChatColor;
 
-public class LogCollector {
 
-    public static void send(int hour, int minute, int second, String ThreadName, String Level, String Message) {
+public class LogCollector {
+    public static StringBuffer buffer = new StringBuffer();
+    public static long time = 0;
+
+    public static void add(int hour, int minute, int second, String ThreadName, String Level, String Message) {
         Message = ChatColor.stripColor(Message);
         String str = "[" + hour + ":" + minute + ":" + second + "] " + "[" + ThreadName + "/" + Level + "]: " + Message;
         if (Config.ConsoleLogForward.filter.enable) {
@@ -17,6 +20,24 @@ public class LogCollector {
                 }
             }
         }
-        ConsoleLogForward.send(str);
+        buffer.append(str);
+        buffer.append("\n");
+    }
+
+    public static void check() {
+        if (buffer.length() == 0) {
+            time = System.currentTimeMillis();
+            return;
+        }
+        if (System.currentTimeMillis() - time > 500) {
+            send();
+        }
+    }
+
+    public static void send() {
+        String message = buffer.toString();
+        buffer.setLength(0);
+        time = System.currentTimeMillis();
+        ConsoleLogForward.send(message);
     }
 }

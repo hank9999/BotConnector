@@ -1,6 +1,7 @@
 package com.github.hank9999.botconnector.Utils;
 
 import com.github.hank9999.botconnector.BotConnector;
+import com.github.hank9999.botconnector.Log.LogCollector;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -20,7 +21,7 @@ public class Timer {
                     timer.cancel();
                     return;
                 }
-                Bukkit.getScheduler().runTask(plugin, () -> checkQueue());
+                Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> checkQueue());
             }
         }, 0, 1000 * 5);
     }
@@ -35,5 +36,20 @@ public class Timer {
                 }
             }
         }
+    }
+
+    public void ConsoleLog() {
+        this.plugin = BotConnector.plugin;
+        final java.util.Timer timer = new java.util.Timer(true); // We use a timer cause the Bukkit scheduler is affected by server lags
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (!plugin.isEnabled()) { // Plugin was disabled
+                    timer.cancel();
+                    return;
+                }
+                Bukkit.getScheduler().runTaskAsynchronously(plugin, LogCollector::check);
+            }
+        }, 0, 500);
     }
 }

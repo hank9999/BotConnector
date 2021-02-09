@@ -15,7 +15,7 @@ public class LogAppender extends AbstractAppender {
         Calendar c = Calendar.getInstance();
         c.setTime(new Date(event.getTimeMillis()));
 
-        LogCollector.send(
+        LogCollector.add(
                 c.get(Calendar.HOUR_OF_DAY),
                 c.get(Calendar.MINUTE),
                 c.get(Calendar.SECOND),
