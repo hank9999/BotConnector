@@ -8,6 +8,8 @@ ConsoleLogForward:
     list:
       - 'WebSocketWrite'
       - 'WebSocketRead'
+      - 'WebSocketConnect'
+      - 'WebSocket Reconnecting'
 ChatEvent: false
 PlayerLoginEvent: false
 PlayerLogoutEvent: false
