@@ -5,6 +5,7 @@ import com.github.hank9999.botconnector.Libs.Config;
 import com.github.hank9999.botconnector.Log.MessageInterceptingCommandRunner;
 import com.github.hank9999.botconnector.Utils.LogSetout;
 import com.github.hank9999.botconnector.Utils.Timer;
+import com.github.hank9999.botconnector.Utils.Updater;
 import com.github.hank9999.botconnector.Utils.WebSocket;
 import com.github.hank9999.botconnector.bStats.MetricsLite;
 import org.bukkit.ChatColor;
@@ -63,6 +64,7 @@ public final class BotConnector extends JavaPlugin {
             getLogger().warning("An error occurred while enabling bStats Metrics!");
         }
         new Timer().queue();
+        new Updater();
     }
 
     @Override
