@@ -20,6 +20,8 @@ ConsoleLogForward:
     list:
       - 'WebSocketWrite'
       - 'WebSocketRead'
+      - 'WebSocketConnect'
+      - 'WebSocket Reconnecting'
 # Chat Message Forward 聊天消息转发
 ChatEvent: false
 # Player Login Event 玩家登录事件
