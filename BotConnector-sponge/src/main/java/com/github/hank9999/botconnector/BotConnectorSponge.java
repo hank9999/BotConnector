@@ -7,7 +7,7 @@ import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.plugin.Plugin;
 
 @Plugin(
-        id = "botconnector",
+        id = "botconnector-sponge",
         name = "BotConnector",
         version = "0.1.1",
         description = "Connect your Minecraft server with the bot program via WebSocket",
