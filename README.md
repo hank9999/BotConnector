@@ -22,6 +22,22 @@ ConsoleLogForward:
       - 'WebSocketRead'
       - 'WebSocketConnect'
       - 'WebSocket Reconnecting'
+      - 'issued server command'
+      - '[AAC5] Cached'
+      - 'Unloading chunks...'
+      - ' chunks. Took'
+      - ' left the game'
+      - 'lost connection: '
+      - 'User Authenticator'
+      - 'handleDisconnection() called twice'
+      - 'Detected the PlayerJoinEvent of player'
+      - 'logged in with entity id '
+      - 'Async Chat Thread'
+      - ' to defined location.'
+      - 'Disconnecting com.mojang.authlib.GameProfile'
+      - ' registered'
+      - 'bStats'
+      - 'AWE:Cron'
 # Chat Message Forward 聊天消息转发
 ChatEvent: false
 # Player Login Event 玩家登录事件

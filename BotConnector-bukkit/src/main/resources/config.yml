@@ -1,17 +1,44 @@
+# WebSocket Address WebSocket地址
 url: 'ws://example.com'
+# Server's Name 服务器名称
 name: 'server'
+# Authentication token 认证token
 token: 'ffffffff-ffff-ffff-ffff-ffffffffffff'
+# enable for true, disable for false true启用, false禁用
+# Console Log Forward 控制台日志转发
 ConsoleLogForward:
   enable: false
   filter:
     enable: true
+    # blacklist 黑名单
     list:
       - 'WebSocketWrite'
       - 'WebSocketRead'
       - 'WebSocketConnect'
       - 'WebSocket Reconnecting'
+      - 'issued server command'
+      - '[AAC5] Cached'
+      - 'Unloading chunks...'
+      - ' chunks. Took'
+      - ' left the game'
+      - 'lost connection: '
+      - 'User Authenticator'
+      - 'handleDisconnection() called twice'
+      - 'Detected the PlayerJoinEvent of player'
+      - 'logged in with entity id '
+      - 'Async Chat Thread'
+      - ' to defined location.'
+      - 'Disconnecting com.mojang.authlib.GameProfile'
+      - ' registered'
+      - 'bStats'
+      - 'AWE:Cron'
+# Chat Message Forward 聊天消息转发
 ChatEvent: false
+# Player Login Event 玩家登录事件
 PlayerLoginEvent: false
+# Player Logout Event 玩家登出事件
 PlayerLogoutEvent: false
+# Player Command Event 玩家执行指令事件
 PlayerCommandEvent: false
+# Rcon Command Event Rcon执行指令事件
 RconCommandEvent: false
