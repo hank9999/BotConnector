@@ -47,7 +47,7 @@
     </build>
 
     <modules>
-        <module>botconnector-bukkit</module>
-        <module>botconnector-sponge</module>
+        <module>BotConnector-bukkit</module>
+        <module>BotConnector-sponge</module>
     </modules>
 </project>
