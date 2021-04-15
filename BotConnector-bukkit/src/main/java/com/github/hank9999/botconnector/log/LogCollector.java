@@ -1,7 +1,7 @@
-package com.github.hank9999.botconnector.Log;
+package com.github.hank9999.botconnector.log;
 
-import com.github.hank9999.botconnector.Events.bukkit.ConsoleLogForward;
-import com.github.hank9999.botconnector.Libs.Config;
+import com.github.hank9999.botconnector.events.bukkit.ConsoleLogForward;
+import com.github.hank9999.botconnector.libs.Config;
 import org.bukkit.ChatColor;
 
 
@@ -9,8 +9,8 @@ public class LogCollector {
     public static final StringBuffer buffer = new StringBuffer();
     public static long time = 0;
 
-    public static void add(int hour, int minute, int second, String ThreadName, String Level, String Message) {
-        Message = ChatColor.stripColor(Message);
+    public static void add(int hour, int minute, int second, String ThreadName, String Level, String originMessage) {
+        String Message = ChatColor.stripColor(originMessage);
         String str = "[" + hour + ":" + minute + ":" + second + "] " + "[" + ThreadName + "/" + Level + "]: " + Message;
         if (Config.ConsoleLogForward.filter.enable) {
             String str_lowCase = str.toLowerCase();

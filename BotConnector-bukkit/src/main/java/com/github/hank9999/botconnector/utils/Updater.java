@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Utils;
+package com.github.hank9999.botconnector.utils;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
 import org.bukkit.ChatColor;

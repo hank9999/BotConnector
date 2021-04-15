@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Events.sponge;
+package com.github.hank9999.botconnector.events.sponge;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.Order;
 import org.spongepowered.api.event.message.MessageEvent;

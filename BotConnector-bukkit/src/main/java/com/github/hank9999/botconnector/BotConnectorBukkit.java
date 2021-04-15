@@ -1,13 +1,13 @@
 package com.github.hank9999.botconnector;
 
-import com.github.hank9999.botconnector.Events.bukkit.*;
-import com.github.hank9999.botconnector.Libs.Config;
-import com.github.hank9999.botconnector.Log.MessageInterceptingCommandRunner;
-import com.github.hank9999.botconnector.Utils.LogSetout;
-import com.github.hank9999.botconnector.Utils.Timer;
-import com.github.hank9999.botconnector.Utils.Updater;
-import com.github.hank9999.botconnector.Utils.WebSocket;
-import com.github.hank9999.botconnector.bStats.MetricsLite;
+import com.github.hank9999.botconnector.events.bukkit.*;
+import com.github.hank9999.botconnector.libs.Config;
+import com.github.hank9999.botconnector.log.MessageInterceptingCommandRunner;
+import com.github.hank9999.botconnector.utils.LogSetout;
+import com.github.hank9999.botconnector.utils.Timer;
+import com.github.hank9999.botconnector.utils.Updater;
+import com.github.hank9999.botconnector.utils.WebSocket;
+import com.github.hank9999.botconnector.bstats.MetricsLite;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 

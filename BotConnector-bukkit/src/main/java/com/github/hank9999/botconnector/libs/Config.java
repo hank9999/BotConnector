@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Libs;
+package com.github.hank9999.botconnector.libs;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
 
@@ -36,14 +36,14 @@ public class Config {
         setValue();
     }
 
-    public static void saveConfig() {
-        BotConnectorBukkit.plugin.saveConfig();
-        reloadConfig();
-    }
-
-    public static void setConfig(String path, Object value) {
-        BotConnectorBukkit.plugin.getConfig().set(path, value);
-    }
+//    public static void saveConfig() {
+//        BotConnectorBukkit.plugin.saveConfig();
+//        reloadConfig();
+//    }
+//
+//    public static void setConfig(String path, Object value) {
+//        BotConnectorBukkit.plugin.getConfig().set(path, value);
+//    }
 
     private static String getString(String path) {
         return BotConnectorBukkit.plugin.getConfig().getString(path);
@@ -53,13 +53,13 @@ public class Config {
         return BotConnectorBukkit.plugin.getConfig().getStringList(path);
     }
 
-    private static int getInt(String path) {
-        return BotConnectorBukkit.plugin.getConfig().getInt(path);
-    }
-
-    private static long getLong(String path) {
-        return BotConnectorBukkit.plugin.getConfig().getLong(path);
-    }
+//    private static int getInt(String path) {
+//        return BotConnectorBukkit.plugin.getConfig().getInt(path);
+//    }
+//
+//    private static long getLong(String path) {
+//        return BotConnectorBukkit.plugin.getConfig().getLong(path);
+//    }
 
     private static Boolean getBoolean(String path) {
         return BotConnectorBukkit.plugin.getConfig().getBoolean(path);

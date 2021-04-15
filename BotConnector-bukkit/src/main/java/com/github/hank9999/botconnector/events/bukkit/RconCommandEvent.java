@@ -1,7 +1,7 @@
-package com.github.hank9999.botconnector.Events.bukkit;
+package com.github.hank9999.botconnector.events.bukkit;
 
-import com.github.hank9999.botconnector.Libs.Json;
-import com.github.hank9999.botconnector.Utils.WebSocket;
+import com.github.hank9999.botconnector.libs.Json;
+import com.github.hank9999.botconnector.utils.WebSocket;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

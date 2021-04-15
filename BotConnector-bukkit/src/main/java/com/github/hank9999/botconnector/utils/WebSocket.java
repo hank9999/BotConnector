@@ -1,8 +1,8 @@
-package com.github.hank9999.botconnector.Utils;
+package com.github.hank9999.botconnector.utils;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
-import com.github.hank9999.botconnector.Libs.URL;
-import com.github.hank9999.botconnector.Libs.WsClient;
+import com.github.hank9999.botconnector.libs.URL;
+import com.github.hank9999.botconnector.libs.WsClient;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.net.URI;

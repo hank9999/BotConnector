@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Log;
+package com.github.hank9999.botconnector.log;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
 import org.apache.logging.log4j.core.LogEvent;
@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class LogAppender extends AbstractAppender {
 
-    public static boolean oldLog4j2 = false;
+    public boolean oldLog4j2 = false;
 
     public LogAppender() {
         super("com.github.hank9999.botconnector.BotConnector", null, null);

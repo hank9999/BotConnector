@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Log;
+package com.github.hank9999.botconnector.log;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Server;

@@ -1,9 +1,9 @@
-package com.github.hank9999.botconnector.Events;
+package com.github.hank9999.botconnector.events;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
-import com.github.hank9999.botconnector.Libs.Config;
-import com.github.hank9999.botconnector.Utils.WebSocket;
-import com.github.hank9999.botconnector.Libs.Json;
+import com.github.hank9999.botconnector.libs.Config;
+import com.github.hank9999.botconnector.utils.WebSocket;
+import com.github.hank9999.botconnector.libs.Json;
 import com.google.gson.Gson;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -26,10 +26,8 @@ public class WebSocketRecevicedMessage {
         if (item.name == null) {
             return;
         }
-        if (!item.name.equals("__ALL__")) {
-            if (!item.name.equals(Config.name)) {
-                return;
-            }
+        if (!item.name.equals("__ALL__") && !item.name.equals(Config.name)) {
+            return;
         }
         if (item.sn == null) {
             return;

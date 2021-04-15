@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.bStats;
+package com.github.hank9999.botconnector.bstats;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

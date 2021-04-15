@@ -1,29 +1,28 @@
-package com.github.hank9999.botconnector.Events.bukkit;
+package com.github.hank9999.botconnector.events.bukkit;
 
-import com.github.hank9999.botconnector.Libs.Json;
-import com.github.hank9999.botconnector.Utils.WebSocket;
+import com.github.hank9999.botconnector.libs.Json;
+import com.github.hank9999.botconnector.utils.WebSocket;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class ChatEvent implements Listener {
-
+public class PlayerCommandEvent implements Listener {
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
-    public void onChat(AsyncPlayerChatEvent event) {
+    public void onCommand(PlayerCommandPreprocessEvent event) {
         Player p = event.getPlayer();
         Map<String, String> map = new LinkedHashMap<String, String>() {
             {
-                put("type", "Chat");
+                put("type", "PlayerCommand");
                 put("username", ChatColor.stripColor(p.getName().trim()));
                 put("uuid", String.valueOf(p.getUniqueId()));
-                put("text", ChatColor.stripColor(event.getMessage().trim()));
+                put("command", event.getMessage());
             }
         };
         map = Collections.unmodifiableMap(map);

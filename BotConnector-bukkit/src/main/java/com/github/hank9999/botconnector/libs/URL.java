@@ -1,4 +1,4 @@
-package com.github.hank9999.botconnector.Libs;
+package com.github.hank9999.botconnector.libs;
 
 import java.net.URLEncoder;
 

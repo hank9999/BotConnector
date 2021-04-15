@@ -1,7 +1,7 @@
-package com.github.hank9999.botconnector.Libs;
+package com.github.hank9999.botconnector.libs;
 
-import com.github.hank9999.botconnector.Events.WebSocketRecevicedMessage;
-import com.github.hank9999.botconnector.Utils.WebSocket;
+import com.github.hank9999.botconnector.events.WebSocketRecevicedMessage;
+import com.github.hank9999.botconnector.utils.WebSocket;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 

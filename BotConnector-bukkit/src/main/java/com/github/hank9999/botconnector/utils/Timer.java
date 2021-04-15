@@ -1,7 +1,7 @@
-package com.github.hank9999.botconnector.Utils;
+package com.github.hank9999.botconnector.utils;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
-import com.github.hank9999.botconnector.Log.LogCollector;
+import com.github.hank9999.botconnector.log.LogCollector;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 

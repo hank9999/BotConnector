@@ -1,6 +1,6 @@
-package com.github.hank9999.botconnector.Utils;
+package com.github.hank9999.botconnector.utils;
 
-import com.github.hank9999.botconnector.Log.LogAppender;
+import com.github.hank9999.botconnector.log.LogAppender;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Appender;
 
