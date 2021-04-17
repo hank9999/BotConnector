@@ -1,4 +1,7 @@
 # BotConnector
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cce914446ad8417aba201b4545b879de)](https://app.codacy.com/gh/hank9999/BotConnector?utm_source=github.com&utm_medium=referral&utm_content=hank9999/BotConnector&utm_campaign=Badge_Grade_Settings)
+
 Connect your Minecraft server with the bot program via WebSocket  
 通过WebSocket与Bot程序联动  
 
