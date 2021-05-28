@@ -69,9 +69,9 @@ public final class BotConnectorBukkit extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        plugin = null;
-        cmdRunner = null;
         WebSocket.Close();
         LogSetout.remove();
+        plugin = null;
+        cmdRunner = null;
     }
 }
