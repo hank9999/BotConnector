@@ -4,8 +4,6 @@ import com.github.hank9999.botconnector.BotConnectorBukkit;
 import com.github.hank9999.botconnector.libs.Json;
 import com.github.hank9999.botconnector.log.LogCollector;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.plugin.Plugin;
 
 import java.util.*;
 
