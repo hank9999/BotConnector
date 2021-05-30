@@ -64,6 +64,7 @@ public final class BotConnectorBukkit extends JavaPlugin {
             getLogger().warning("An error occurred while enabling bStats Metrics!");
         }
         new Timer().queue();
+        new Timer().ws();
         new Updater();
     }
 
