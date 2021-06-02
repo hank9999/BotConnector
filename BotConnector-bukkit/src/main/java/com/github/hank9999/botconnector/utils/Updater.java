@@ -1,6 +1,7 @@
 package com.github.hank9999.botconnector.utils;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
+import com.github.hank9999.botconnector.libs.Config;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 
@@ -48,8 +49,10 @@ final public class Updater {
                     this.plugin.getLogger().info(ChatColor.AQUA + "See it in https://github.com/hank9999/BotConnector/releases");
                 }
             } catch (Exception e) {
-                this.plugin.getLogger().info(ChatColor.AQUA + "Cannot look for updates: " + e.getMessage());
-                e.printStackTrace();
+                if (Config.updateError) {
+                    this.plugin.getLogger().info(ChatColor.AQUA + "Cannot look for updates: " + e.getMessage());
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -58,14 +61,10 @@ final public class Updater {
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("User-Agent", "BotConnectorPlugin/" + this.plugin.getDescription().getVersion());
-        con.setConnectTimeout(10000);
-        con.setReadTimeout(10000);
+        con.setRequestProperty("User-Agent", "BotConnector/" + this.plugin.getDescription().getVersion());
+        con.setConnectTimeout(20 * 1000);
+        con.setReadTimeout(20 * 1000);
         con.setDoOutput(true);
-        int responseCode = con.getResponseCode();
-        if (responseCode == 404 || responseCode == 204) {
-            return null;
-        }
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
         String inputLine;

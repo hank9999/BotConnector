@@ -65,7 +65,9 @@ public final class BotConnectorBukkit extends JavaPlugin {
         }
         new Timer().queue();
         new Timer().ws();
-        new Updater();
+        if (Config.update) {
+            new Updater();
+        }
     }
 
     @Override

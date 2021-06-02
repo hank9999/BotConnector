@@ -14,6 +14,10 @@ name: 'server'
 # Authentication token 认证token
 token: 'ffffffff-ffff-ffff-ffff-ffffffffffff'
 # enable for true, disable for false true启用, false禁用
+# Whether to enable checking updates 是否启用检查更新
+update: true
+# Whether reporting an error, when checking updates is failed 检查更新失败时是否报错
+updateError: true
 # Console Log Forward 控制台日志转发
 ConsoleLogForward:
   enable: false

@@ -9,6 +9,8 @@ public class Config {
     public static String url = "ws://example.com";
     public static String name = "server";
     public static String token = "ffffffff-ffff-ffff-ffff-ffffffffffff";
+    public static Boolean update = true;
+    public static Boolean updateError = true;
     public static class ConsoleLogForward {
         public static Boolean enable = false;
         public static class filter {
@@ -69,6 +71,8 @@ public class Config {
         url = getString("url");
         name = getString("name");
         token = getString("token");
+        update = getBoolean("update");
+        updateError = getBoolean("updateError");
         ConsoleLogForward.enable = getBoolean("ConsoleLogForward.enable");
         ConsoleLogForward.filter.enable = getBoolean("ConsoleLogForward.filter.enable");
         ConsoleLogForward.filter.list = getStringList("ConsoleLogForward.filter.list");
