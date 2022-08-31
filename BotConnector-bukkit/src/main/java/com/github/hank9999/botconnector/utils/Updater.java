@@ -36,7 +36,7 @@ final public class Updater {
         this.plugin.getServer().getScheduler().runTaskAsynchronously(this.plugin, () -> {
             try {
                 String Response = getUrl("https://raw.githubusercontent.com/hank9999/BotConnector/main/version.txt");
-                if (Response == null) {
+                if (Response.length() == 0) {
                     throw new Exception("Response Empty");
                 }
                 if (("v" + this.plugin.getDescription().getVersion()).equalsIgnoreCase(Response)) {
