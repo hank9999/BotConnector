@@ -24,6 +24,7 @@ ConsoleLogForward:
       - '[AAC5] Cached'
       - 'Unloading chunks...'
       - ' chunks. Took'
+      - ' joined the game'
       - ' left the game'
       - 'lost connection: '
       - 'User Authenticator'
