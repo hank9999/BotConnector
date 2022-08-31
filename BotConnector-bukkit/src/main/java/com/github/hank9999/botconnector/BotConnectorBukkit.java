@@ -11,14 +11,17 @@ import com.github.hank9999.botconnector.bstats.MetricsLite;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.logging.Logger;
+
 public final class BotConnectorBukkit extends JavaPlugin {
 
     public static BotConnectorBukkit plugin;
     public static MessageInterceptingCommandRunner cmdRunner;
-
+    public static Logger logger;
     @Override
     public void onEnable() {
         plugin = this;
+        logger = this.getLogger();
         cmdRunner = new MessageInterceptingCommandRunner(getServer().getConsoleSender());
 
         Config.loadConfig();
@@ -76,5 +79,6 @@ public final class BotConnectorBukkit extends JavaPlugin {
         LogSetout.remove();
         plugin = null;
         cmdRunner = null;
+        logger = null;
     }
 }

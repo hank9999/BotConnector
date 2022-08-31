@@ -28,7 +28,7 @@ public class WebSocket {
             (new BukkitRunnable() {
                 public void run() {
                     try {
-                        System.out.println("WebSocket Reconnecting...");
+                        BotConnectorBukkit.logger.info("WebSocket Reconnecting...");
                         myClient.reconnect();
                     } catch (Exception e) {
                         e.printStackTrace();
