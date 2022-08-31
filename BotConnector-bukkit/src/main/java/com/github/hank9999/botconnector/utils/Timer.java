@@ -1,7 +1,6 @@
 package com.github.hank9999.botconnector.utils;
 
 import com.github.hank9999.botconnector.BotConnectorBukkit;
-import com.github.hank9999.botconnector.libs.Json;
 import com.github.hank9999.botconnector.log.LogCollector;
 import org.bukkit.Bukkit;
 
@@ -63,16 +62,17 @@ public class Timer {
     }
 
     private void checkWs() {
-        String time = String.valueOf(System.currentTimeMillis());
-        time = time.substring(0, time.length() - 3);
-        String finalTime = time;
-        Map<String, String> map = new LinkedHashMap<String, String>() {
-            {
-                put("type", "checkWs");
-                put("time", finalTime);
-            }
-        };
-        map = Collections.unmodifiableMap(map);
-        WebSocket.sendMessage(Json.Serialization(map));
+//        String time = String.valueOf(System.currentTimeMillis());
+//        time = time.substring(0, time.length() - 3);
+//        String finalTime = time;
+//        Map<String, String> map = new LinkedHashMap<String, String>() {
+//            {
+//                put("type", "checkWs");
+//                put("time", finalTime);
+//            }
+//        };
+//        map = Collections.unmodifiableMap(map);
+//        WebSocket.sendMessage(Json.Serialization(map));
+        WebSocket.sendPing();
     }
 }

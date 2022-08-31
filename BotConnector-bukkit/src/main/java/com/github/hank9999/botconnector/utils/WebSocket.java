@@ -49,4 +49,10 @@ public class WebSocket {
     public static void Close() {
         myClient.close();
     }
+
+    public static void sendPing() {
+        if (Connected) {
+            myClient.sendPing();
+        }
+    }
 }
