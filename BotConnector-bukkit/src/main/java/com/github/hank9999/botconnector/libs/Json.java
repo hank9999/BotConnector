@@ -3,8 +3,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class Json {
+    public static Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
+
     public static String Serialization(Object o) {
-        Gson gson = new GsonBuilder().enableComplexMapKeySerialization().create();
         return gson.toJson(o);
     }
 }
