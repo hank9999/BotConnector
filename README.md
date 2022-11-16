@@ -5,6 +5,8 @@
 Connect your Minecraft server with the bot program via WebSocket  
 通过WebSocket与Bot程序联动  
 
+**Sponge 适配已推迟, 将在后期逐步进行适配**
+
 ## Config 配置
 ```yml
 # WebSocket Address WebSocket地址
@@ -33,6 +35,7 @@ ConsoleLogForward:
       - '[AAC5] Cached'
       - 'Unloading chunks...'
       - ' chunks. Took'
+      - ' joined the game'
       - ' left the game'
       - 'lost connection: '
       - 'User Authenticator'
