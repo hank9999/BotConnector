@@ -6,7 +6,7 @@
 
     <groupId>com.github.hank9999</groupId>
     <artifactId>BotConnector</artifactId>
-    <version>0.1.4</version>
+    <version>0.1.5</version>
     <packaging>pom</packaging>
 
     <properties>
